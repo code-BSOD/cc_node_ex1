@@ -94,7 +94,7 @@ app.post('/api/books/', (req, res) => {
   /*
    * return the new book information object as json
    */
-  var newBook = req.body; // TODO: ; needs to check later
+  var newBook = req.body; // FIXME: ; needs to check later
 
   db.books.create(newBook, function (err, newBook) {
     if (err) throw err;
@@ -123,7 +123,7 @@ app.put('/api/books/:id', (req, res) => {
    */
   // var updatedBookInfo = bookNewData;
 
-  db.books.findByIdAndUpdate({id:bookId}, bookNewData, {new:true}, function update(err, updatedBookInfo) {
+  db.books.findByIdAndUpdate(bookId, bookNewData, {new:true}, function update(err, updatedBookInfo) {
     if (err) throw err;
     res.json(updatedBookInfo);
   })
@@ -138,7 +138,7 @@ app.delete('/api/books/:id', (req, res) => {
    */
   const bookId = req.params.id;
   /*
-   * TODO: use the books model and find using
+   * FIXME: use the books model and find using
    * the bookId and delete the book
    */
   /*
