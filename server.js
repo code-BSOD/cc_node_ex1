@@ -153,6 +153,13 @@ app.delete('/api/books/:id', (req, res) => {
 });
 
 
+app.get('/api/exercise2', (req, res) => {
+  res.json({
+    'message': 'group 21 application deployed using docker'
+  })
+});
+
+
 /**********
  * SERVER *
  **********/
